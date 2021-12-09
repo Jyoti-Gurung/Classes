@@ -5,50 +5,25 @@ Description: Database of Video Games, Movies and Music; add and delete from data
 */
 
 #include <iostream>
+#include"1parent.h"
+#include"2videogames.h"
+#include"3music.h"
+#include"4movies.h"
 #include <cstring>
 using namespace std;
 
 bool forever = true;
 
-class VideoGames {
-  public:
-    char title[20];
-    int year;
-    char publisher[20];
-    float rating;
-
-};
-
-class Music {
-  public:
-    char title[20];
-    char artist[20];
-    int year;
-    float duration;
-    char publisher[20];
-
-};
-
-class Movies {
-  public:
-    char title[20];
-    char director[20];
-    int year;
-    float duration;
-    float rating;
-
-};
-
 void add() {
-  cout << "added";
+  cout << "added\n";
 }
 
 void search() {
-  cout << "searched";  
+  cout << "searched\n";  
 }
 
 void deleted() {
-  cout << "deleted";
+  cout << "deleted\n";
 }
 
 int main() {
@@ -66,8 +41,8 @@ int main() {
     cout << "\nCommands are: SEARCH, ADD, DELETE, QUIT\n";
     cin >> command;
 
-
     //4 for loops for matching commands; if matched then trigger function
+    
     //print
     for (int i = 0; i < strlen(command); i++) {
       if (!(command[i] == search2[i])) {
