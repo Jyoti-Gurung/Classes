@@ -5,25 +5,25 @@ Description: Database of Video Games, Movies and Music; add and delete from data
 */
 
 #include <iostream>
-#include"1parent.h"
-#include"2videogames.h"
-#include"3music.h"
-#include"4movies.h"
 #include <cstring>
+#include <vector>
 using namespace std;
 
+// the loops for 4 commands
 bool forever = true;
 
+
+
 void add() {
-  cout << "added\n";
+  cout << "Type 1: Video Games 2: Music 3: Movies\n";
 }
 
 void search() {
-  cout << "searched\n";  
+  cout << "Type the year it was published!\n";  
 }
 
 void deleted() {
-  cout << "deleted\n";
+  cout << "Type the year it was published\n";
 }
 
 int main() {
