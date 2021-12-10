@@ -5,83 +5,79 @@ Description: Database of Video Games, Movies and Music; add and delete from data
 */
 
 #include <iostream>
-#include <cstring>
 #include <vector>
+#include "bvideogames.h"
+#include "cmusic.h"
+#include "dmovies.h"
 using namespace std;
 
-// the loops for 4 commands
-bool forever = true;
-
-
-
 void add() {
-  cout << "Type 1: Video Games 2: Music 3: Movies\n";
+  int logic;
+  cout << "1: Video Games 2: Music 3:Movies\n";
+  cin >> logic;
+
 }
 
 void search() {
-  cout << "Type the year it was published!\n";  
+  int logic;
+  cout << "Type the Year:\n";
+  cin >> logic;
 }
 
 void deleted() {
-  cout << "Type the year it was published\n";
+  int logic;
+  cout << "Type the Year:\n";
+  cin >> logic;
 }
 
 int main() {
 
-  while (forever == true) {
+  cmusic* c = new cmusic();
+  vector <aparent*> storage;
+  storage.push_back(c);
 
-    // 4 command matches
-    char search2[6] = {'S', 'E', 'A', 'R', 'C', 'H'};
-    char add2[4] = {'A', 'D', 'D'};
-    char delete2[7] = {'D', 'E', 'L', 'E', 'T', 'E'};
-    char quit2[5] = {'Q', 'U', 'I', 'T'};
+  char input[5] = {'a','a','a','a','a'};
 
-    char command[7];
+  
 
-    cout << "\nCommands are: SEARCH, ADD, DELETE, QUIT\n";
-    cin >> command;
+  ((cmusic*)storage[0])->setPublisher(input);
+  ((cmusic*)storage[0])->setTitle(input);
+  ((cmusic*)storage[0])->setDuration(30);
+  ((cmusic*)storage[0])->setRating(5);
+  ((cmusic*)storage[0])->setYear(2018);
+  ((cmusic*)storage[0])->setArtist(input);
 
-    //4 for loops for matching commands; if matched then trigger function
-    
-    //print
-    for (int i = 0; i < strlen(command); i++) {
-      if (!(command[i] == search2[i])) {
-        break;
-      }
-      if (i == strlen(search2)-1 && strlen(command) == strlen(search2)) {
-        search();
-      }
-    }
+  cout 
+  << storage[0]->getPublisher() << endl
+  << storage[0]->getTitle() << endl
+  << storage[0]->getDuration() << endl
+  << storage[0]->getRating() << endl
+  << storage[0]->getYear() << endl
+  << ((cmusic*)storage[0])->getArtist() << endl
+  ;
 
-    //added
-    for (int i = 0; i < strlen(command); i++) {
-      if (!(command[i] == add2[i])) {
-        break;
-      }
-      if (i == strlen(add2)-1 && strlen(command) == strlen(add2)) {
+  int logic;
+  while (logic != 4) { 
+    cout << "\n1:ADD 2:SEARCH 3:DELETE 4:QUIT\n";
+    cin >> logic;
+    switch(logic) {
+      case 1:
         add();
-      }
-    }
-
-    //deleted
-    for (int i = 0; i < strlen(command); i++) {
-      if (!(command[i] == delete2[i])) {
         break;
-      }
-      if (i == strlen(delete2)-1 && strlen(command) == strlen(delete2)) {
+      case 2:
+        search();
+        break;
+      case 3:
         deleted();
-      }
-    }
-
-    //quit; no function, turns off the forever bool to turn off while loop
-    for (int i = 0; i < strlen(command); i++) {
-      if (!(command[i] == quit2[i])) {
         break;
-      }
-      if (i == strlen(quit2)-1 && strlen(command) == strlen(quit2)) {
-        forever = false;
-      }
     }
   }
 
 }
+
+/*Sources:
+1.https://www.youtube.com/watch?v=RWNM7CzDNyY
+returning an array
+2.https://www.youtube.com/watch?v=VnZbghMhfOY
+passing in an array to a function
+*/

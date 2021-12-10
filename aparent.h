@@ -1,31 +1,30 @@
+#ifndef SQUARE_H
+#define SQUARE_H
+
 #include <iostream>
-#include <cstring>
 using namespace std;
 
 class aparent {
   public:
-
-    virtual void setPublisher(char input[21]);
+    aparent();
+    virtual void setPublisher(char input[]);
     virtual char* getPublisher();
-
-    virtual void setTitle(char input[21]);
+    virtual void setTitle(char input[]);
     virtual char* getTitle();
-
-    virtual void setduration(float input);
+    virtual void setDuration(float input);
     virtual float getDuration();
-
     virtual void setRating(float input);
     virtual float getRating();
-
     virtual void setYear(int input);
     virtual int getYear();
-
+    
   protected:
-  
-    char publisher[21];
-    char title[21];
-    float duration;
-    float rating;
-    int year;
-
+    char publisherInput[21];
+    char titleInput[21];
+    int durationInput;
+    int ratingInput;
+    int yearInput;
+    
 };
+
+#endif

@@ -1,47 +1,61 @@
 #include <iostream>
 #include <cstring>
-#include"aparent.h"
+#include "aparent.h"
+#include "bvideogames.h"
+#include "cmusic.h"
+#include "dmovies.h"
+
 using namespace std;
 
-void aparent::setPublisher(char input[21]) {
-  for (int i = 0; i < strlen(publisher); i++) {
-    publisher[i] = input[i];
+aparent::aparent() {
+}
+
+void aparent::setPublisher(char input[]) {
+  for (int i = 0; i < strlen(input); i++) {
+    publisherInput[i] = input[i];
   }
-};
+}
+
 char* aparent::getPublisher() {
-  char* arr = publisher;
-  strcpy(arr,"please work");
-  return arr;
-}; 
-
-void aparent::setTitle(char input[21]) {
-  for (int i = 0; i < strlen(title); i++) {
-    title[i] = input[i];
+  char* str = publisherInput;
+  for (int i = 0; i < strlen(publisherInput); i++) {
+    str[i] = publisherInput[i];
   }
-};
-char* aparent::getTitle() {
-  char* arr = title;
-  strcpy(arr,"please work");
-  return arr;
-}; 
+  return str;
+}
 
-void aparent::setduration(float input) {
-  duration = input;
-};
+
+void aparent::setTitle(char input[]) {
+  for (int i = 0; i < strlen(input); i++) {
+    titleInput[i] = input[i];
+  }
+}
+
+char* aparent::getTitle() {
+  char* str = titleInput;
+  for (int i = 0; i < strlen(titleInput); i++) {
+    str[i] = titleInput[i];
+  }
+  return str;
+}
+
+void aparent::setDuration(float input) {
+  durationInput = input;
+}
 float aparent::getDuration() {
-  return duration;
-};  
+  return durationInput;
+}
 
 void aparent::setRating(float input) {
-  rating = input;
-};
+  ratingInput = input;
+}
 float aparent::getRating() {
-  return rating;
-};  
+  return ratingInput;
+}
 
 void aparent::setYear(int input) {
-  year = input;
-};
+  yearInput = input;
+}
 int aparent::getYear() {
-  return year;
-};
+  return yearInput;
+}
