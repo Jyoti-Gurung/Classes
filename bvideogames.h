@@ -10,8 +10,6 @@ class bvideogames: public aparent {
   public:
     bvideogames();
 
-  protected:
-
 };
 
 #endif
