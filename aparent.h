@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 
+// Initilize functions and variables
+
 class aparent {
   public:
     aparent();

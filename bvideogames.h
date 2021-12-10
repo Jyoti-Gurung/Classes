@@ -6,6 +6,8 @@
 
 using namespace std;
 
+// Empty file
+
 class bvideogames: public aparent {
   public:
     bvideogames();

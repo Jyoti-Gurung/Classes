@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// Empty constructor and a setter (add data) and getter (get said data, print them etc)
+
 cmusic::cmusic() {
 
 }

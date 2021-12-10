@@ -7,6 +7,8 @@
 
 using namespace std;
 
+// Empty constructor and a bunch of setters (add data) and getters (get said data, print them etc)
+
 aparent::aparent() {
 }
 

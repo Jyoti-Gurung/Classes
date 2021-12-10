@@ -6,11 +6,13 @@ Description: Database of Video Games, Movies and Music; add and delete from data
 
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include "bvideogames.h"
 #include "cmusic.h"
 #include "dmovies.h"
 using namespace std;
 
+// Intializing the functions to use below main()
 void add();
 void search();
 void deleted();
@@ -18,11 +20,13 @@ void addVideoGames();
 void addMusic();
 void addMovies();
 
+// Vector and counting vectors
 vector <aparent*> storage;
 int countStorage = 0;
 
 int main() {
 
+  // Using a switch statement to call on functions & a while loop to do so forever, unless you quit using 4
   int logic;
   while (logic != 4) { 
     cout << "\n1:ADD 2:SEARCH 3:DELETE 4:QUIT\n";
@@ -42,7 +46,7 @@ int main() {
 
 }
 
-
+// Eternal loop unless you type 1-3, then pick up a function based on data type
 void add() {
   int logic;
   while (logic < 1 || logic > 3) {
@@ -62,6 +66,7 @@ void add() {
   }
 }
 
+// Check if the year matching by looping through storage, then print out the contents; we use a try catch function guard to check for non parent methods
 void search() {
   int logic;
   cout << "Type the Year:\n";
@@ -69,12 +74,26 @@ void search() {
 
   for (int i = 0; i < storage.size(); i++) {
     if (storage[i]->getYear() == logic) {
-      cout << "Yahoo";
+      cout << storage[i]->getTitle() << endl;
+      try {
+        cout 
+        << storage[i]->getPublisher() 
+        << ((dmovies*)storage[i])->getDirector() << endl
+        << ((cmusic*)storage[i])->getArtist() << endl
+        << storage[i]->getDuration() << endl
+        << storage[i]->getRating()
+        ;
+      }
+      catch(int zero) {
+        zero = 5;
+      }
+      cout << storage[i]->getYear() << endl;
     }
   }
 
 }
 
+// Delete items if it matches said storage
 void deleted() {
   int logic;
   cout << "Type the Year:\n";
@@ -88,12 +107,14 @@ void deleted() {
 
 }
 
+// Ask for fields and set them to Video Games
 void addVideoGames() {
   char publisher[21], title[21];
   float rating;
   int year;
   cout << "Publisher:\n";
   cin >> publisher;
+  cin.clear();
   cout << "Title:\n";
   cin >> title;
   cout << "Rating:\n";
@@ -113,6 +134,7 @@ void addVideoGames() {
 
 }
 
+// Ask for fields and set them to Music
 void addMusic() {
   char publisher[21], artist[21], title[21];
   float duration;
@@ -141,6 +163,7 @@ void addMusic() {
 
 }
 
+// Ask for fields and set them to Movies
 void addMovies() {
   char director[21], title[21];
   float duration, rating;
@@ -174,31 +197,4 @@ void addMovies() {
 returning an array
 2.https://www.youtube.com/watch?v=VnZbghMhfOY
 passing in an array to a function
-*/
-
-/*
-
-  cout 
-  << storage[0]->getPublisher() << endl
-  << storage[0]->getTitle() << endl
-  << storage[0]->getRating() << endl
-  << storage[0]->getYear() << endl
-  ;
-  
-  cout 
-  << storage[0]->getPublisher() << endl
-  << ((cmusic*)storage[0])->getArtist() << endl
-  << storage[0]->getTitle() << endl
-  << storage[0]->getDuration() << endl
-  << storage[0]->getYear() << endl
-  ;
-
-  cout
-  << ((dmovies*)storage[0])->getDirector() << endl
-  << storage[0]->getTitle() << endl
-  << storage[0]->getDuration() << endl
-  << storage[0]->getRating() << endl
-  << storage[0]->getYear() << endl
-  ;
-
 */

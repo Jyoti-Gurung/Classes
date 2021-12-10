@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// Initilize functions and variables
 class cmusic: public aparent {
   public:
     cmusic();
