@@ -75,9 +75,10 @@ void search() {
   for (int i = 0; i < storage.size(); i++) {
     if (storage[i]->getYear() == logic) {
       cout << storage[i]->getTitle() << endl;
+      /*
       try {
         cout 
-        << storage[i]->getPublisher() 
+        << storage[i]->getPublisher() << endl
         << ((dmovies*)storage[i])->getDirector() << endl
         << ((cmusic*)storage[i])->getArtist() << endl
         << storage[i]->getDuration() << endl
@@ -87,6 +88,7 @@ void search() {
       catch(int zero) {
         zero = 5;
       }
+      */
       cout << storage[i]->getYear() << endl;
     }
   }
@@ -96,12 +98,16 @@ void search() {
 // Delete items if it matches said storage
 void deleted() {
   int logic;
-  cout << "Type the Year:\n";
+  cout << "Type the Year: ";
   cin >> logic;
+  int confirm;
+  cout << "Type 1 to Confirm: ";
+  cin >> confirm;
 
   for (int i = 0; i < storage.size(); i++) {
-    if (storage[i]->getYear() == logic) {
+    if (storage[i]->getYear() == logic && confirm == 1) {
       storage.erase(storage.begin() + i);
+      countStorage--;
     }
   }
 
