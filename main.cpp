@@ -73,26 +73,28 @@ void search() {
   cin >> logic;
 
   for (int i = 0; i < storage.size(); i++) {
-    if (storage[i]->getYear() == logic) {
+    if (((dmovies*)storage[i])->getYear() == logic) {
       cout << storage[i]->getTitle() << endl;
+      
       /*
       try {
-        cout 
-        << storage[i]->getPublisher() << endl
-        << ((dmovies*)storage[i])->getDirector() << endl
-        << ((cmusic*)storage[i])->getArtist() << endl
-        << storage[i]->getDuration() << endl
-        << storage[i]->getRating()
-        ;
+      cout 
+      << storage[i]->getPublisher() << endl
+      << ((dmovies*)storage[i])->getDirector() << endl
+      << ((cmusic*)storage[i])->getArtist() << endl
+      << storage[i]->getDuration() << endl
+      << storage[i]->getRating()
+      ;
       }
-      catch(int zero) {
-        zero = 5;
+      catch(int failure) {
+        failure = 0;
       }
       */
+      
       cout << storage[i]->getYear() << endl;
     }
   }
-
+  
 }
 
 // Delete items if it matches said storage
